@@ -1,0 +1,36 @@
+def walk_until_wall():
+    while front_is_clear():
+        move()
+
+def walk_until_wall_and_pick_beeper():
+    while front_is_clear():
+        if (on_beeper()):
+            pick_beeper()
+        move()
+    if (on_beeper()):
+        pick_beeper()
+
+def turn_back():
+    for i in range (2):
+        turn_left()
+
+def turn_right():
+    for i in range (3):
+        turn_left()
+
+for i in range (8):
+    walk_until_wall_and_pick_beeper()
+    
+    if i == 7:
+        break
+    
+    if i%2==0:
+        turn_left()
+        move()
+        turn_left()
+    else:
+        turn_right()
+        move()
+        turn_right()
+
+turn_off()

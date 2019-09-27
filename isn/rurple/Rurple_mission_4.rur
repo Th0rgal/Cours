@@ -1,0 +1,52 @@
+class Bot():
+    
+    beepers = 0
+
+    def walk_until_wall(self):
+        while front_is_clear():
+            move()
+
+    def walk_until_wall_and_pick_beeper(self):
+        while front_is_clear():
+            if (on_beeper()):
+                pick_beeper()
+            self.move()
+        if (on_beeper()):
+            pick_beeper()
+
+    def turn_back(self):
+        for i in range (2):
+            turn_left()
+        print("I turned back")
+
+    def turn_right(self):
+        for i in range (3):
+            turn_left()
+        print("I turned right")
+
+    def turn_left(self):
+        turn_left()
+        print("I turned left")
+        
+    def move(self):
+        move()
+        print("I moved")
+
+for i in range (8):
+    
+    bot = Bot()
+    bot.walk_until_wall_and_pick_beeper()
+    
+    if i == 7:
+        break
+    
+    if i%2==0:
+        bot.turn_left()
+        bot.move()
+        bot.turn_left()
+    else:
+        bot.turn_right()
+        bot.move()
+        bot.turn_right()
+
+turn_off()

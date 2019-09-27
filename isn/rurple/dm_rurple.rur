@@ -1,0 +1,48 @@
+beepers = 0
+k = 3
+# vector associated to the orientation
+orientation = (1, 0)
+
+def _walk_until_wall():
+    while front_is_clear():
+        move()
+
+def _pick_beeper():
+    global beepers
+    if (on_beeper() and beepers < k):
+        beepers += 1
+        pick_beeper()
+        print("I picked a beeper, I have " + str(beepers) + " beepers")
+
+def _walk_until_wall_and_pick_beeper():
+    while front_is_clear():
+        _move_and_pick()
+
+def _turn_back():
+    for i in range (2):
+        turn_left()
+    print("I turned back")
+
+def _turn_right():
+    for i in range (3):
+        turn_left()
+    orientation = 
+    print("I turned right")
+
+def _turn_left():
+    turn_left()
+    print("I turned left")
+        
+def _move():
+    move()
+    print("I moved")
+
+def _move_and_pick():
+    _move()
+    _pick_beeper()
+
+
+while(True):
+    
+
+turn_off()

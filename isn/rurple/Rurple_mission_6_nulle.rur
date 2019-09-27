@@ -1,0 +1,25 @@
+def _turn_right():
+    for i in range (3):
+        turn_left()
+
+def _turn_back():
+    for i in range (2):
+        turn_left()
+
+def _escape():
+
+    if on_beeper():
+        turn_off()
+    move()
+
+    if right_is_clear():
+        _turn_right()
+    elif not front_is_clear():
+        if left_is_clear():
+            turn_left()
+        else:
+            _turn_back()
+            
+    _escape()
+
+_escape()
